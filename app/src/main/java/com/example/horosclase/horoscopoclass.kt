@@ -1,4 +1,5 @@
 package com.example.horosclase
 
-class horoscopoclass(val  id:String , val name:String, val photo: Int) {
+// Cambiar el val name:String a tipo Int
+class horoscopoclass(val  id:String , val name:Int, val description:Int,val photo: Int) {
 }
