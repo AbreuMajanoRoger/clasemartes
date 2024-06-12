@@ -4,7 +4,7 @@ class horoscopoProvider {
 
 
     companion object {
-        val horosList: List<horoscopoclass> = listOf(
+        private val horosList: List<horoscopoclass> = listOf(
             horoscopoclass("aries", R.string.horoscope_name_aries, R.string.horoscope_date_aries,R.drawable.aries_s),
             horoscopoclass("tauro", R.string.horoscope_name_taurus,R.string.horoscope_date_taurus,R.drawable.tauro_s),
             horoscopoclass("geminis", R.string.horoscope_name_gemini,R.string.horoscope_date_gemini,R.drawable.geminis_s),
