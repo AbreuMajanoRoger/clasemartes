@@ -17,6 +17,7 @@ class horosViewHolder(view:View):RecyclerView.ViewHolder(view){
         horosCopo.setText(horoscopoclass.name)
         imgHoroscopo.setImageResource(horoscopoclass.photo)
         descTextView.setText(horoscopoclass.description)
+        
         Log.i("Horos","Render")
     }
 }

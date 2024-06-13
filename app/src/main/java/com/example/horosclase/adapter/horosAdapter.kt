@@ -1,7 +1,6 @@
 package com.example.horosclase.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.horosclase.R
 import com.example.horosclase.horoscopoclass
@@ -32,4 +31,3 @@ class horosAdapter( private val horosList:List<horoscopoclass> , private val onI
 
 
 
-//private val onItemClickListener:(Int)->Unit
