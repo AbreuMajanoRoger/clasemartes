@@ -15,7 +15,8 @@ class DetailActivity : AppCompatActivity() {
 
     }
 
-    lateinit var horoscope: horoscopoclass
+
+     private lateinit var horoscope: horoscopoclass
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
