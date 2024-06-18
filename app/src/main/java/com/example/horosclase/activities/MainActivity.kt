@@ -27,20 +27,25 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.horoscopoL)
 
 
-        adapter = horosAdapter(horosList){
-                position->navigateToDetail(horosList[position])
+        adapter = horosAdapter(horosList) { position ->
+            navigateToDetail(horosList[position])
         }
 
         recyclerView.adapter = adapter
-        recyclerView.layoutManager =LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        adapter.updateData(horosList)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
 
-    val searchViewItem = menu.findItem(R.id.menu_search)
-    val searchView = searchViewItem.actionView as SearchView
+        val searchViewItem = menu.findItem(R.id.menu_search)
+        val searchView = searchViewItem.actionView as SearchView
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -49,11 +54,11 @@ class MainActivity : AppCompatActivity() {
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 if (newText != null) {
-                    horosList = horoscopoProvider.findAll().filter { getString(it.name).contains(newText, true) ||
+                    horosList = horoscopoProvider.findAll().filter {
+                        getString(it.name).contains(newText, true) ||
                                 getString(it.description).contains(newText, true)
 
-
-                }
+                    }
                     adapter.updateData(horosList, newText)
                 }
                 return true
@@ -63,16 +68,10 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-
-    // today 17 jun: 9:40 fin
-
-    fun navigateToDetail(horoscope: horoscopoclass){
+    fun navigateToDetail(horoscope: horoscopoclass) {
         val intent: Intent = Intent(this, DetailActivity::class.java)
-        intent.putExtra(DetailActivity.EXTRA_HOROSCOPE_ID,horoscope.id)
+        intent.putExtra(DetailActivity.EXTRA_HOROSCOPE_ID, horoscope.id)
         startActivity(intent)
 
-
     }
-
-
 }

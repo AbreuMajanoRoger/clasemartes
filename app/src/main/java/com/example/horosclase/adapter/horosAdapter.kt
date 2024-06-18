@@ -11,13 +11,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.horosclase.R
 import com.example.horosclase.data.horoscopoclass
+import com.example.horosclase.utils.SessionManager
+import com.example.horosclase.utils.highlight
 
 
-class horosAdapter(private var dataSet:List<horoscopoclass>, private val onItemClickListener:(Int)->Unit):RecyclerView.Adapter<horosViewHolder>() {
-
+class horosAdapter(private var dataSet: List<horoscopoclass>, private val onItemClickListener: (Int) -> Unit) : RecyclerView.Adapter<horosViewHolder>() {
 
     private var highlightText: String? = null
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): horosViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -25,12 +25,10 @@ class horosAdapter(private var dataSet:List<horoscopoclass>, private val onItemC
 
         return horosViewHolder(view)
     }
-
     override fun getItemCount(): Int = dataSet.size
 
 
-
-    override fun onBindViewHolder(holder:horosViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: horosViewHolder, position: Int) {
         val horoscope = dataSet[position]
         holder.render(horoscope)
         if (highlightText != null) {
@@ -40,36 +38,50 @@ class horosAdapter(private var dataSet:List<horoscopoclass>, private val onItemC
             onItemClickListener(position)
         }
 
-        }
+    }
 
-        fun updateData (newDataSet: List<horoscopoclass>, nothing: Nothing?) {
-            updateData(newDataSet, null)
-        }
+    fun updateData(newDataSet: List<horoscopoclass>) {
+        updateData(newDataSet, null)
+    }
 
-        fun updateData(newDataSet: List<horoscopoclass>, highlight: String?) {
-            this.highlightText  = highlight
-            dataSet = newDataSet
-            notifyDataSetChanged()
-             }
+    fun updateData(newDataSet: List<horoscopoclass>, highlight: String?) {
+        this.highlightText = highlight
+        dataSet = newDataSet
+        notifyDataSetChanged()
+    }
 
-        }
+
+
+}
 
 class horosViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val horosName: TextView
     private val descTextView: TextView
     private val imgHoroscopo: ImageView
+    private val favoriteImageView:ImageView
 
     init {
         horosName = view.findViewById(R.id.horosName)
         descTextView = view.findViewById(R.id.descTextView)
         imgHoroscopo = view.findViewById(R.id.imgHoroscopo)
+        favoriteImageView = view.findViewById(R.id.favoriteImageView)
     }
 
     fun render(horoscope: horoscopoclass) {
         horosName.setText(horoscope.name)
         descTextView.setText(horoscope.description)
         imgHoroscopo.setImageResource(horoscope.photo)
+        val context = itemView.context
+        var isFavorite = SessionManager(context).isFavorite(horoscope.id)
+        if (isFavorite) {
+            favoriteImageView.visibility = View.VISIBLE
+        } else {
+            favoriteImageView.visibility = View.GONE
+        }
     }
+
+
+
     fun highlight(text: String) {
         try {
             val highlighted = horosName.text.toString().highlight(text)
@@ -82,12 +94,7 @@ class horosViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     }
 }
 
-fun String.highlight(text: String) : SpannableString {
-    val str = SpannableString(this)
-    val startIndex = str.indexOf(text, 0, true)
-    str.setSpan(BackgroundColorSpan(Color.CYAN), startIndex, startIndex + text.length, 0)
-    return str
-}
+
 
 
 
