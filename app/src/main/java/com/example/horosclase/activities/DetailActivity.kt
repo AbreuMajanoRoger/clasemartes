@@ -73,6 +73,7 @@ class DetailActivity : AppCompatActivity() {
                 finish()
                 true
             }
+
             R.id.menu_favorite -> {
                 if (isFavorite) {
                     session.setFavoriteHoroscope("")

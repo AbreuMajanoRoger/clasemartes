@@ -7,7 +7,7 @@
 
 
         <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/purple_200"
+            android:id="@+id/pintar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 

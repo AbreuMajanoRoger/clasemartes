@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.horosclase.adapter.horosAdapter
 import androidx.appcompat.widget.SearchView
+import androidx.cardview.widget.CardView
 import com.example.horosclase.R
 import com.example.horosclase.data.horoscopoProvider
 import com.example.horosclase.data.horoscopoclass
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var adapter: horosAdapter
     lateinit var horosList: List<horoscopoclass>
     lateinit var recyclerView: RecyclerView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,4 +76,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
+
+
 }

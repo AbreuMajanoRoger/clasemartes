@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 
 
-class SessionManager (context: Context)  {
+class SessionManager(context: Context) {
     companion object {
         const val FAVORITE_HOROSCOPE = "FAVORITE_HOROSCOPE"
     }
@@ -15,7 +15,7 @@ class SessionManager (context: Context)  {
         sharedPref = context.getSharedPreferences("horoscope_session", Context.MODE_PRIVATE)
     }
 
-    fun isFavorite(horoscopeId: String) : Boolean {
+    fun isFavorite(horoscopeId: String): Boolean {
         return getFavoriteHoroscope()?.equals(horoscopeId) ?: false
     }
 
@@ -25,11 +25,9 @@ class SessionManager (context: Context)  {
         editor.apply()
     }
 
-    fun getFavoriteHoroscope() : String? {
+    fun getFavoriteHoroscope(): String? {
         return sharedPref.getString(FAVORITE_HOROSCOPE, null)
     }
-
-
 
 
 }

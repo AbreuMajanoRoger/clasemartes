@@ -14,4 +14,7 @@
     <color name="olivo">#CCFF85</color>
     <color name="tierra">#FFB66B</color>
     <color name="tierraDos">#FFED5C</color>
+    <color name="fuego">#E8617D</color>
+    <color name ="agua">#30D9E5</color>
+    <color name ="aire">#E3FBFA</color>
 </resources>
