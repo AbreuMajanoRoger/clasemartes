@@ -3,6 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:paddingStart="10sp"
+    android:paddingBottom="10sp"
+    android:paddingTop="10sp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -23,7 +26,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@android:drawable/btn_star_big_on"
-                    app:tint="?android:attr/colorActivatedHighlight"
+                    app:tint="@color/icon"
                     android:scaleType="centerCrop"
                     android:layout_gravity="bottom|end"/>
 
@@ -48,6 +51,7 @@
                     />
 
                 <TextView
+                    android:paddingStart="5sp"
                     android:id="@+id/descTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
