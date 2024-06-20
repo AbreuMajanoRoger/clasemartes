@@ -15,14 +15,14 @@ class horoscopoProvider {
                 R.color.fuego, "fuego"
             ),
             horoscopoclass(
-                "tauro",
+                "taurus",
                 R.string.horoscope_name_taurus,
                 R.string.horoscope_date_taurus,
                 R.drawable.tauro_s,
                 R.color.tierraDos, "tierra"
             ),
             horoscopoclass(
-                "geminis",
+                "gemini",
                 R.string.horoscope_name_gemini,
                 R.string.horoscope_date_gemini,
                 R.drawable.geminis_s,
@@ -57,35 +57,35 @@ class horoscopoProvider {
                 R.color.aire, "aire"
             ),
             horoscopoclass(
-                "escorpio",
+                "scorpio",
                 R.string.horoscope_name_scorpio,
                 R.string.horoscope_date_scorpio,
                 R.drawable.escorpio_s,
                 R.color.agua, "agua"
             ),
             horoscopoclass(
-                "sagitario",
+                "sagittarius",
                 R.string.horoscope_name_sagittarius,
                 R.string.horoscope_date_sagittarius,
                 R.drawable.sagitario_s,
                 R.color.fuego, "fuego"
             ),
             horoscopoclass(
-                "capricornio",
+                "capricorn",
                 R.string.horoscope_name_capricorn,
                 R.string.horoscope_date_capricorn,
                 R.drawable.capricornio_s,
                 R.color.tierraDos, "tierra"
             ),
             horoscopoclass(
-                "acuario",
+                "aquarius",
                 R.string.horoscope_name_aquarius,
                 R.string.horoscope_date_aquarius,
                 R.drawable.acuario_s,
                 R.color.aire, "aire"
             ),
             horoscopoclass(
-                "piscis",
+                "pisces",
                 R.string.horoscope_name_pisces,
                 R.string.horoscope_date_pisces,
                 R.drawable.piscis_s,
